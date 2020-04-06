@@ -1,6 +1,6 @@
-// Borders by the Snapblocks team
-// Figma plugin that add independent borders to each side of a FRAME element.
-// https://github.com/xchema/figma-borders
+// Borders from the Snapblocks team
+// Figma plugin that add independent borders to each side of a FRAME element with constraints.
+// https://github.com/snapblocks/figma-plugin-borders
 
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__);
