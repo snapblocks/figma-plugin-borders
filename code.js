@@ -1,16 +1,10 @@
-// Borders by the Snapblocks team
-// Figma plugin that add independent borders to each side of a FRAME element.
-// https://github.com/xchema/figma-borders
+// Borders from the Snapblocks team
+// Figma plugin that add independent borders to each side of a FRAME element with constraints.
+// https://github.com/snapblocks/figma-plugin-borders
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__);
 // NOTE: resizing the ui window for plugin
-// figma.ui.resize(300,500)
-// verify if selection has correct type to apply border
-var correctType = function () {
-    var elem = figma.currentPage.selection[0]; // get first element on selection
-    // return (elem.type === 'RECTANGLE' || elem.type === 'FRAME') ? true : false;
-    return (elem.type === 'FRAME') ? true : false;
-};
+figma.ui.resize(300, 0);
 figma.on('selectionchange', function () {
     if (figma.currentPage.selection.length) {
         var elem = figma.currentPage.selection[0];
