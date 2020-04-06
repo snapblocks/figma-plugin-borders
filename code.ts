@@ -8,15 +8,23 @@ figma.showUI(__html__);
 // NOTE: resizing the ui window for plugin
 figma.ui.resize(300,0);
 
-figma.on('selectionchange', () => {
+// check for current selected element
+const checkSelection = () => {
+  let elem = null;
+  let kind = null;
   if (figma.currentPage.selection.length) {
-    const elem = figma.currentPage.selection[0];
-    const kind = figma.currentPage.selection[0].type;
-    figma.ui.postMessage({ type: 'selectionChange', elem, kind });
-  } else {
-    const elem = null;
-    figma.ui.postMessage({ type: 'selectionChange', elem });
+    elem = figma.currentPage.selection[0];
+    kind = figma.currentPage.selection[0].type;
   }
+  figma.ui.postMessage({ type: 'selectionChange', elem, kind });
+}
+
+// call for first time plugin loads
+checkSelection();
+
+// check everytime user selects something in Figma
+figma.on('selectionchange', () => {
+  checkSelection();
 })
 
 // message from ui to figma sandbox
