@@ -36,7 +36,7 @@ figma.ui.onmessage = function (msg) {
         line.y = selected.height;
         line.constraints = {
             horizontal: "STRETCH",
-            vertical: "MIN"
+            vertical: "MAX"
         };
     }
     if (msg.type === 'border-right') {
